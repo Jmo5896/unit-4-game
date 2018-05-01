@@ -1,0 +1,56 @@
+/* backround image */
+body, html {
+    height: 100%;
+}
+
+.bg { 
+    /* The image used */
+    background-image: url('../images/Crystal_Caverns_Backround.jpg');
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
+
+h1 {
+    background-color: aquamarine;
+    text-align: center;
+}
+
+h3, h6 {
+    text-align: center;
+}
+
+img {
+    height: 125px;
+    width: 125px;   
+}
+
+.fading {
+    width: 100%;
+   opacity: .5;
+}
+
+.directions {
+    background-color: azure;   
+}
+
+.getCloser {
+    padding: 0px;
+}
+
+.crystalButtons {
+    background-color: white;
+    height: 150px;
+    width: 150px;
+    opacity: 0.5;  
+}
+
+.crystalButtons:hover {
+    opacity: 1.0;
+    
+}

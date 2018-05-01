@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Crystal Collector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type = 'text/javascript' src="assets/javascript/game.js"></script>
+</head>
+<body class = 'bg'>
+    
+    <div class = 'container'>
+        
+        <div class = 'row fading'>
+        
+            <div class = 'col-md-4'></div>
+                    
+            <div class = 'col-md-4'>
+                <h1>Crystal Collector!</h1>
+            </div>
+        </div>
+
+        <div class = 'row fading'>
+            <div class = 'col-md-3'></div>
+            <section class = 'col-md-6 directions'>
+                <P>You will be given a random number at the start of the game.</P>
+                <P>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</P>
+                <P>You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</P>
+                <P>When the game starts, it will change the values of eack crystal.</P>
+                <p>Good Luck!!!</p>
+            </section>
+        </div>
+
+        <div class = 'row'>
+        
+            <div class = 'col-md-3'></div>
+                        
+            <div class = 'col-md-2'>
+                <h3>Wins: </h3>
+            </div>
+            
+            <div class = 'col-md-1 '>
+                <h2 id = 'wins'>
+                    0
+                </h2>
+            </div>
+
+            <div class = 'col-md-2'>
+                <h3>Losses: </h3>
+            </div>
+
+            <div class = 'col-md-1 '>
+                <h2 id = 'losses'>
+                    0
+                </h2>
+            </div>
+        </div>
+
+        <div class = 'row'>
+        
+            <div class = 'col-md-3'></div>
+                            
+            <div class = 'col-sm-2'>
+                <h6>Random Number: </h6>
+            </div>
+
+            <div class = 'col-md-1 getCloser'>
+                <h5 id = 'guessNumber'>
+                    0
+                </h5>
+            </div>
+
+            <div class = 'col-sm-2'>
+                <h6>Your Total: </h6>
+            </div>
+            
+            <div class = 'col-md-1 getCloser'>
+                <h5 id = 'currentScore'>
+                    0
+                </h5>
+            </div>
+        </div>
+
+        <div class = 'row'>
+        
+                <div class = 'col-md-2'></div>
+                                
+                <div class = 'col-md-2'>
+                    <button id = 'a' class = 'crystalButtons'>
+                        <img class='crystal-image' src = 'assets/images/garnet.jpg'>
+                    </button>
+                </div>
+                
+                <div class = 'col-md-2'>
+                    <button id = 'b' class = 'crystalButtons'>
+                            <img src = 'assets/images/sapphire.jpg'>
+                    </button>
+                </div>
+
+                <div class = 'col-md-2'>
+                    <button id = 'c' class = 'crystalButtons'>
+                            <img src = 'assets/images/emerald.jpg'>
+                    </button>
+                </div>
+
+                <div class = 'col-md-2'>
+                    <button id = 'd' class = 'crystalButtons'>
+                            <img src = 'assets/images/rose-quartz.jpg'>
+                    </button>
+                </div>
+            </div>
+    </div>
+    
+    
+   
+    <script>
+        function updateVariablesOnPage() {
+            currentScore = 0;
+            guessNumber = numberPool[Math.floor(Math.random() * numberPool.length)]; 
+            crystalANumber = Math.ceil(Math.random()*12);
+            crystalBNumber = Math.ceil(Math.random()*12);
+            crystalCNumber = Math.ceil(Math.random()*12);
+            crystalDNumber = Math.ceil(Math.random()*12);
+            $('#wins').html(wins);
+            $('#losses').html(losses);
+            $('#currentScore').html(currentScore);
+            $('#guessNumber').html(guessNumber);
+        }
+        updateVariablesOnPage();
+
+        $('#a').on('click', function() {
+            currentScore += crystalANumber;
+        });
+
+        $('#b').on('click', function() {
+            currentScore += crystalBNumber;
+        });
+
+        $('#c').on('click', function() {
+            currentScore += crystalCNumber;
+        });
+
+        $('#d').on('click', function() {
+            currentScore += crystalDNumber;
+        });
+        $('.crystalButtons').on('click', function() {
+            $('#currentScore').html(currentScore);
+        });
+		</script>
+</body>
+</html>
